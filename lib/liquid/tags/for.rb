@@ -81,6 +81,10 @@ module Liquid
       end
     end
 
+    def each_node(&block)
+      (Array(nodelist) + [@limit, @from]).compact.each(&block)
+    end
+
     protected
 
     def lax_parse(markup)

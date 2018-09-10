@@ -91,6 +91,10 @@ module Liquid
       obj
     end
 
+    def each_node(&block)
+      [name].each(&block)
+    end
+
     private
 
     def parse_filter_expressions(filter_name, unparsed_args)

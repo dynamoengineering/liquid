@@ -81,6 +81,10 @@ module Liquid
       "#<Condition #{[@left, @operator, @right].compact.join(' '.freeze)}>"
     end
 
+    def each_node(&block)
+      [left, right, @child_condition].each(&block)
+    end
+
     protected
 
     attr_reader :child_relation, :child_condition

@@ -79,6 +79,10 @@ module Liquid
       end
     end
 
+    def each_node(&block)
+      [@variable_name_expr].each(&block)
+    end
+
     private
 
     alias_method :parse_context, :options

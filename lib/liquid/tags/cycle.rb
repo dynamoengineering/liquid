@@ -43,6 +43,10 @@ module Liquid
       end
     end
 
+    def each_node(&block)
+      @variables.each(&block)
+    end
+
     private
 
     def variables_from_string(markup)

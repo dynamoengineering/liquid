@@ -39,5 +39,9 @@ module Liquid
     def blank?
       false
     end
+
+    def each_node(&block)
+      Array(nodelist).each(&block)
+    end
   end
 end

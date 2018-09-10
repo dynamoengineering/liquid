@@ -96,6 +96,10 @@ module Liquid
       output.join
     end
 
+    def each_node(&block)
+      Array(nodelist.reject { |node| node.is_a?(String) }).each(&block)
+    end
+
     private
 
     def render_node_to_output(node, output, context, skip_output = false)

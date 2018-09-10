@@ -48,6 +48,10 @@ module Liquid
       result << "</tr>\n"
       result
     end
+
+    def each_node(&block)
+      (Array(nodelist) + @attributes.values + [@collection_name]).each(&block)
+    end
   end
 
   Template.register_tag('tablerow'.freeze, TableRow)

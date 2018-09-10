@@ -31,6 +31,10 @@ module Liquid
       true
     end
 
+    def each_node(&block)
+      [@from].each(&block)
+    end
+
     private
 
     def assign_score_of(val)

@@ -53,6 +53,10 @@ module Liquid
       end
     end
 
+    def each_node(&block)
+      (Array(nodelist) + @blocks + [@left]).each(&block)
+    end
+
     private
 
     def record_when_condition(markup)

@@ -48,6 +48,10 @@ module Liquid
       end
     end
 
+    def each_node(&block)
+      (Array(nodelist) + @blocks).each(&block)
+    end
+
     private
 
     def push_block(tag, markup)
